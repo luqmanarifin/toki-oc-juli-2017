@@ -68,7 +68,7 @@ public:
 	}
 };
 
-Segment SEG[TOTAL_SEGMENT] = {Segment(0, 0, 0, 0, 0, 0, 0),
+Segment SEG[TOTAL_SEGMENT] = {Segment(1, 1, 1, 1, 1, 1, 0),
 			 	 Segment(0, 1, 1, 0, 0, 0, 0),
 			 	 Segment(1, 1, 0, 1, 1, 0, 1),
 			 	 Segment(1, 1, 1, 1, 0, 0, 1),
