@@ -43,7 +43,8 @@ void get(int v, int par = -1, int level = 0) {
 
 void centroidDecompose(int v) {
   getSize(v);
-  while (toBig[v] != -1 && sz[toBig[v]] * 2 >= sz[v]) v = toBig[v];
+  int total = sz[v];
+  while (toBig[v] != -1 && sz[toBig[v]] * 2 >= total) v = toBig[v];
   reset(v);
   depth[col[v]] = 0;
   for (int u : g[v]) if (live[u]) {
