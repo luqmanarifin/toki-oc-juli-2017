@@ -2,17 +2,19 @@ Terdekat Diantara yang Terjauh
 
 [Deskripsi]
 
-Diberikan sebuah pohon (tree) berukuran N. Setiap node pada tree memiliki salah satu warna dari 1 sampai K (inklusif). Mungkin saja ada lebih dari 1 node yang memiliki warna yang sama, atau bisa saja tidak ada node yang memiliki warna tersebut. 
+Diberikan sebuah pohon (tree) berukuran N. Setiap node dinamai dari 1 hingga N. Setiap node pada tree memiliki salah satu warna dari 1 hingga K (inklusif). Mungkin saja ada lebih dari 1 node yang memiliki warna yang sama, atau bisa saja tidak ada node yang memiliki warna tersebut. 
 
-Terdapat dua fungsi F dan G. F(C, X) menyatakan jarak terjauh dari sebuah node X ke node yang memiliki warna C, sedangkan G(C) menyatakan minimum dari F(C, X) untuk setiap node 1 ≤ X ≤ N. Tentukan G(C) untuk setiap 1 ≤ C ≤ K !
+Terdapat dua fungsi F dan G. Kedua fungsi tersebut didefinisikan sebagai berikut:
+1. F(C, X) menyatakan jarak terjauh dari sebuah node X ke node yang memiliki warna C. Apabila tidak ada node yang memiliki warna C, F(C, X) bernilai 0.
+2. G(C) menyatakan minimum dari F(C, X) untuk setiap node 1 ≤ X ≤ N. Tentukan G(C) untuk setiap 1 ≤ C ≤ K !
 
 [Format Masukan]
 
 Baris pertama berisi dua bilangan bulat N dan K.
 
-Baris kedua berisi K bilangan bulat C[i] (1 ≤ i ≤ N).
+Baris kedua berisi N bilangan bulat C[i] (1 ≤ i ≤ N).
 
-N - 1 baris berikutnya berisi dua bilangan bulat u dan v yang menyatakan node[u] dan node[v] terhubung satu sama lain.
+Setelah itu, terdapat N - 1 baris, setiap baris berisi 2 buah bilangan bulat x_i, y_i (1 ≤ x_i, y_i ≤ N; x_i ≠ y_i), menandakan bahwa terdapat jalan dua arah antara node x_i dan node y_i.
 
 [Format Keluaran]
 
@@ -31,8 +33,7 @@ Sebuah baris berisi K buah bilangan bulat G(1), G(2), ... G(K).
 
 [Batasan]
 
-- 1 ≤ N ≤ 1.000.000
+- 1 ≤ N ≤ 100.000
 - 1 ≤ K ≤ N
 - 1 ≤ C[i] ≤ K
-- 1 ≤ U[i], V[i] ≤ N, U[i] ≠ V[i]
 - Dijamin graf yang diberikan merupakan sebuah pohon
