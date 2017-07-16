@@ -2,7 +2,9 @@ Kakek Sugiono
 
 [Deskripsi]
 
-Kakek Sugiono mempunyai N permen yang berbeda. Ia mempunyai 2 cucu yang bernama Rutfa dan Harma. Kakek Sugiono merupakan seorang yang sangat dermawan, sehingga beliau sering menyisihkan sebagian permennya untuk diberikan ke panti asuhan. Ia akan memilih sebuah bilangan K. K permen akan diberikan ke panti asuhan dan total (N - K) permen akan diberikan ke kedua cucunya. Kakek Sugiono tidak ingin kedua cucunya bertengkar, sehingga kakek Sugiono harus dapat membagikan permen berjumlah sama ke masing-masing cucunya. 
+Kakek Sugiono mempunyai N permen yang berbeda. Ia mempunyai 2 cucu yang bernama Rutfa dan Harma. Kakek Sugiono merupakan seorang yang sangat dermawan, sehingga beliau sering menyisihkan sebagian permennya untuk diberikan ke panti asuhan. 
+
+Kakek Sugiono akan menyisihkan K permen untuk diberikan ke panti asuhan dan sisanya ((N - K) permen) akan diberikan ke kedua cucunya. Kakek Sugiono tidak ingin kedua cucunya bertengkar, sehingga kakek Sugiono harus dapat membagikan permen berjumlah sama ke masing-masing cucunya. 
 
 Kakek Sugiono penasaran, berapakah total cara pemilihan permen yang berbeda untuk setiap K dari (0 ≤ K ≤ N)? Karena hasilnya terlalu besar, ia hanya meminta keluarkan hasilnya dimodulo 1.000.000.007.
 
