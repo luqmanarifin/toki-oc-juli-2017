@@ -1,0 +1,55 @@
+Estimated Cost Tree
+
+[Deskripsi]
+
+Lelah membaca deskripsi soal TOKI Open Contest yang terlalu panjang, Anda memutuskan mencari soal dengan deskripsi pendek. Beruntung Anda menemukan soal ini!
+
+Diberikan sebuah pohon (tree) dengan sisi-sisi tanpa arah (undirected edge). Terdapat nilai beban untuk tiap sisi. Ongkos untuk pergi dari suatu titik ke titik lain didefinisikan sebagai total beban untuk menelusuri sisi dari titik awal ke titik akhir, tanpa ada sisi yang dikunjungi lebih dari sekali.
+
+Anda akan memilih titik awal secara random dengan probabilitas merata. Anda juga akan memilih titik akhir dengan cara yang sama. Berapa estimasi ongkos pergi dari titik awal ke titik akhir?
+
+[Format Masukan]
+
+Baris pertama berisi satu buah bilangan bulat N, berapa banyak titik pada tree. Baris kedua hingga baris ke-N, masing-masing berisi 3 buah bilangan bulat U_i, V_i, C_i, artinya ada sisi tanpa arah antara titik ke U_i dan V_i dengan nilai beban C_i.
+
+
+[Format Keluaran]
+
+Keluarkan sebuah bilangan real, estimasi ongkos pergi dari titik awal ke titik akhir, apabila titik awal dan titik akhir dipilih secara random dengan probabilitas merata antara 1 hingga N.
+
+Jawaban akan dianggap benar apabila kesalahan relatif jawaban dengan juri tidak melebihi 10^(-4).
+
+
+[Contoh Masukan 1]
+
+3
+1 2 2
+2 3 1
+
+
+[Contoh Keluaran 1]
+
+1.33333333
+
+
+[Penjelasan]
+
+Ada 9 kemungkinan pemilihan titik:
+1 -> 1, ongkos 0
+1 -> 2, ongkos 2
+1 -> 3, ongkos 3
+2 -> 1, ongkos 2
+2 -> 2, ongkos 0
+2 -> 3, ongkos 1
+3 -> 1, ongkos 3
+3 -> 2, ongkos 1
+3 -> 3, ongkos 0
+
+Estimasi nilainya = total nilai / banyak kemungkinan = 12 / 9 = 1.3333
+
+
+[Batasan]
+
+- 1 ≤ N ≤ 10^5
+- 1 ≤ U, V ≤ N
+- 1 ≤ C ≤ 10^7
