@@ -17,7 +17,7 @@ Baris pertama berisi satu buah bilangan bulat N, berapa banyak titik pada tree. 
 
 Keluarkan sebuah bilangan real, estimasi ongkos pergi dari titik awal ke titik akhir, apabila titik awal dan titik akhir dipilih secara random dengan probabilitas merata antara 1 hingga N.
 
-Jawaban akan dianggap benar apabila kesalahan relatif jawaban dengan juri tidak melebihi 10^(-4).
+Jawaban akan dianggap benar apabila kesalahan relatif jawaban dengan juri tidak melebihi 10^(-6).
 
 
 [Contoh Masukan 1]
