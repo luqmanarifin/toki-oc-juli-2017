@@ -27,8 +27,8 @@ void dfs(int now, int bef) {
     int cost = it.second;
     if (near == bef) continue;
     dfs(near, now);
-    ans += 1LL * cost * cnt[near][0] * (tot[1] - cnt[near][1]);
-    ans += 1LL * cost * cnt[near][1] * (tot[0] - cnt[near][0]); 
+    ans += 2LL * cost * cnt[near][0] * (tot[1] - cnt[near][1]);
+    ans += 2LL * cost * cnt[near][1] * (tot[0] - cnt[near][0]); 
   }
 }
 
