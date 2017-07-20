@@ -5,19 +5,30 @@ using namespace std;
 const int N = 1e5 + 5;
 
 vector<pair<int, int>> edge[N];
-int cnt[N];
-long long tot;
+int cnt[N][2], tot[2];
+long long ans;
 int n;
 
+void pre(int now, int bef, int st) {
+  cnt[now][st]++;
+  for (auto it : edge[now]) {
+    int near = it.first;
+    int cost = it.second;
+    if (near == bef) continue;
+    pre(near, now, st ^ (cost % 2));
+    cnt[now][0] += cnt[near][0];
+    cnt[now][1] += cnt[near][1];
+  }
+}
+
 void dfs(int now, int bef) {
-  cnt[now] = 1;
   for (auto it : edge[now]) {
     int near = it.first;
     int cost = it.second;
     if (near == bef) continue;
     dfs(near, now);
-    cnt[now] += cnt[near];
-    tot += 2LL * cnt[near] * (n - cnt[near]) * cost;
+    ans += 1LL * cost * cnt[near][0] * (tot[1] - cnt[near][1]);
+    ans += 1LL * cost * cnt[near][1] * (tot[0] - cnt[near][0]); 
   }
 }
 
@@ -29,7 +40,10 @@ int main() {
     edge[u].emplace_back(v, c);
     edge[v].emplace_back(u, c);
   }
+  pre(1, 0, 0);
+  tot[0] = cnt[1][0];
+  tot[1] = cnt[1][1];
   dfs(1, 0);
-  printf("%.15f\n", (double) tot / (1LL * n * n));
+  printf("%lld\n", ans);
   return 0;
 }
