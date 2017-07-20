@@ -1,21 +1,21 @@
-Estimated Cost Tree
+Path Ganjil
 
 [Deskripsi]
 
 Lelah membaca deskripsi soal TOKI Open Contest yang terlalu panjang, Anda memutuskan mencari soal dengan deskripsi pendek. Beruntung Anda menemukan soal ini!
 
-Diberikan sebuah pohon (tree) dengan sisi-sisi tanpa arah (undirected edge). Terdapat nilai beban untuk tiap sisi. Ongkos untuk pergi dari suatu titik ke titik lain didefinisikan sebagai total beban untuk menelusuri sisi dari titik awal ke titik akhir, tanpa ada sisi yang dikunjungi lebih dari sekali.
+Diberikan sebuah graph berbentuk tree dengan weighted undirected edge. Path didefinisikan sebagai jejak telusur edge dimulai dari suatu vertex dan berakhir pada vertex lain tanpa ada edge yang dikunjungi lebih dari sekali. Ongkos suatu path didefinisikan sebagai total cost edge yang dilewati pada path tersebut. 
 
-Anda akan memilih titik awal secara random dengan probabilitas merata. Anda juga akan memilih titik akhir dengan cara yang sama. Berapa estimasi ongkos pergi dari titik awal ke titik akhir?
+Berapa jumlah dari seluruh path yang mungkin yang memiliki ongkos ganjil?
 
 [Format Masukan]
 
-Baris pertama berisi satu buah bilangan bulat N, berapa banyak titik pada tree. Baris kedua hingga baris ke-N, masing-masing berisi 3 buah bilangan bulat U_i, V_i, C_i, artinya ada sisi tanpa arah antara titik ke U_i dan V_i dengan nilai beban C_i.
+Baris pertama berisi satu buah bilangan bulat N, berapa banyak vertex pada tree. Baris kedua hingga baris ke-N, masing-masing berisi 3 buah bilangan bulat U_i, V_i, C_i, artinya ada edge tanpa arah antara vertex ke U_i dan V_i dengan nilai beban C_i.
 
 
 [Format Keluaran]
 
-Keluarkan sebuah bilangan real, estimasi ongkos pergi dari titik awal ke titik akhir, apabila titik awal dan titik akhir dipilih secara random dengan probabilitas merata antara 1 hingga N.
+Keluarkan sebuah bilangan real, estimasi biaya pergi dari vertex awal ke vertex akhir, apabila vertex awal dan vertex akhir dipilih secara random dengan probabilitas merata antara 1 hingga N.
 
 Jawaban akan dianggap benar apabila kesalahan relatif jawaban dengan juri tidak melebihi 10^(-6).
 
@@ -29,23 +29,23 @@ Jawaban akan dianggap benar apabila kesalahan relatif jawaban dengan juri tidak 
 
 [Contoh Keluaran 1]
 
-1.33333333
+8
 
 
 [Penjelasan]
 
-Ada 9 kemungkinan pemilihan titik:
-1 -> 1, ongkos 0
-1 -> 2, ongkos 2
-1 -> 3, ongkos 3
-2 -> 1, ongkos 2
-2 -> 2, ongkos 0
-2 -> 3, ongkos 1
-3 -> 1, ongkos 3
-3 -> 2, ongkos 1
-3 -> 3, ongkos 0
+Ada 9 kemungkinan path:
+1 -> 1, biaya 0
+1 -> 2, biaya 2
+1 -> 3, biaya 3
+2 -> 1, biaya 2
+2 -> 2, biaya 0
+2 -> 3, biaya 1
+3 -> 1, biaya 3
+3 -> 2, biaya 1
+3 -> 3, biaya 0
 
-Estimasi nilainya = total nilai / banyak kemungkinan = 12 / 9 = 1.3333
+Total path dengan ongkos ganjil adalah: 3 + 1 + 3 + 1 = 8
 
 
 [Batasan]
