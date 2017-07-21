@@ -15,9 +15,7 @@ Baris pertama berisi satu buah bilangan bulat N, berapa banyak vertex pada tree.
 
 [Format Keluaran]
 
-Keluarkan sebuah bilangan real, estimasi biaya pergi dari vertex awal ke vertex akhir, apabila vertex awal dan vertex akhir dipilih secara random dengan probabilitas merata antara 1 hingga N.
-
-Jawaban akan dianggap benar apabila kesalahan relatif jawaban dengan juri tidak melebihi 10^(-6).
+Keluarkan sebuah bilangan bulat, jumlah dari seluruh path yang mungkin yang memiliki ongkos ganjil.
 
 
 [Contoh Masukan 1]
