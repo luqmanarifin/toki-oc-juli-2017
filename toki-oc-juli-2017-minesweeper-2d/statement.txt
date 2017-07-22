@@ -57,5 +57,6 @@ Pada contoh kedua jika petak yang tertutup berisi bom maka angka pada petak bari
 
 [Batasan]
 
-1 <= N, M <= 1000
-Karakter yang muncul pada grid hanyalah '*', '?', atau sebuah digit dari '0' hingga '9'.
+- 1 <= N, M <= 1000
+- Karakter yang muncul pada grid hanyalah '*', '?', atau sebuah digit dari '0' hingga '9'.
+- Karakter '?' hanya muncul paling banyak 16 kali.
