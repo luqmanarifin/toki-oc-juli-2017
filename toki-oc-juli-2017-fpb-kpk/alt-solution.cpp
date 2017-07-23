@@ -70,7 +70,7 @@ int main() {
   vector<pair<int,int>> ans;
 
   for(auto it = fpb.begin(); it != fpb.end(); it++) {
-    ans.push_back({it->first, it->second});
+    if (it->second > 0) ans.push_back({it->first, it->second});
   }
 
   sort(ans.begin(), ans.end());
