@@ -92,24 +92,27 @@ protected:
     int nBigCase = 10;
     int nMaxCase = 5;
 
-    // Sama aja linear atau random juga
+    // Sama aja linear star atau random juga
     CASE(N = 1, LinearTree(1, 1));
     CASE(N = 2, LinearTree(1, 1e7));
 
     // Random Kecil
     CASE(N = rnd.nextInt(100, 1000), LinearTree(1, 1e7));
+    CASE(N = rnd.nextInt(100, 1000), StarGraph(1, 1e7));
     for(int i = 0; i < nLittleCase; i++) {
       CASE(N = rnd.nextInt(100, 1000), RandomTree(1, 1e7));
     }
 
     // Random Besar
     CASE(N = rnd.nextInt(50000, 100000), LinearTree(1, 1e7));
+    CASE(N = rnd.nextInt(50000, 100000), StarGraph(1, 1e7));
     for(int i = 0; i < nBigCase; i++) {
       CASE(N = rnd.nextInt(50000, 100000), RandomTree(1, 1e7));
     }
 
     // Max Case
     CASE(N = 100000, LinearTree(1e7, 1e7));
+    CASE(N = 100000, StarGraph(1e7, 1e7));
     for(int i = 0; i < nMaxCase; i++) {
       CASE(N = 100000, RandomTree(1e7, 1e7));
     }
@@ -134,6 +137,24 @@ private:
       }
       else {
         U.push_back(mapping[i-1]);
+        V.push_back(mapping[i]);
+        C.push_back(rnd.nextInt(minC, maxC));
+      }
+    }
+  }
+
+  void StarGraph(int minC, int maxC) {
+    vector<int> mapping;
+    GenerateRandomMapping(N, mapping);
+
+    for(int i = 1; i < N; i++) {
+      if (rnd.nextInt(2) == 0) {
+        U.push_back(mapping[i]);
+        V.push_back(mapping[0]);
+        C.push_back(rnd.nextInt(minC, maxC));
+      }
+      else {
+        U.push_back(mapping[0]);
         V.push_back(mapping[i]);
         C.push_back(rnd.nextInt(minC, maxC));
       }
