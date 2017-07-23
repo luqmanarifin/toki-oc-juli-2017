@@ -3,8 +3,8 @@ using namespace std;
 
 typedef long long ll;
 
-ll mod = 1e9 + 7;
-ll maxn = 1000;
+const ll mod = 1e9 + 7;
+const ll maxn = 1000;
 ll comb[maxn+10][maxn+10];
 
 void computeCombination() {
