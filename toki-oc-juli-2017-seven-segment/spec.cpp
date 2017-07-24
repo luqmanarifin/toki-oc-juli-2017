@@ -9,13 +9,12 @@ class ProblemSpec : public BaseProblemSpec {
 protected:
 	int N;
 	const int MAXN = 1e5;
-	string cor, S;
+	string cor;
 	vector<vector<int> > ar;
 	int result;
 	void InputFormat(){
 		LINE(N);
 		RAW_LINE(cor);
-		RAW_LINE(S);
 		GRID(ar) % SIZE(N, 7);
 	}
 
@@ -26,7 +25,6 @@ protected:
 	void Constraints(){
 		CONS(1 <= N && N <= MAXN);
 		CONS((int)cor.size() == N);
-		CONS((1 <= (int) S.size()) && ((int)S.size() <= MAXN));
 		CONS((int)ar.size() == N);
 		CONS(eachVectorLength(ar, 7));
 		CONS(eachElementBetween(ar, 0, 1));
@@ -55,72 +53,70 @@ protected:
 
 	void BeforeTestCase(){
 		cor = "";
-		S = "";
 		ar.clear();
 	}
 
 	void SampleTestCase1(){
-		Input({"3", "101", "156789000", "0 1 1 0 0 0 0", "0 0 0 0 0 0 0", "1 1 1 1 1 1 0"});
+		Input({"3", "101", "0 1 1 0 0 0 0", "0 0 0 0 0 0 0", "1 1 1 1 1 1 0"});
 		Output({"10"});
 	}
 	void TestCases(){
-		CASE(N = 1; cor = "0"; S = "0"; ar.push_back(EmptySegment));
-		CASE(N = 1; cor = "1"; S = "0"; ar.push_back(EmptySegment));
+		CASE(N = 1; cor = "0"; ar.push_back(EmptySegment));
+		CASE(N = 1; cor = "1"; ar.push_back(EmptySegment));
 		/* Manual Test Case */
 		ManualTestCases();
 		
-		CASE(N = 5; generateAllCorrect(); generateRandomDigit(N); generateSomeMaxArray());
+		CASE(N = 5; generateAllCorrect(); generateRandomArray());
 		
-		CASE(N = 1000; generateAllIncorrect(); generateRandomDigit(N); generateSomeMaxArray());
-		CASE(N = 100; generateMixedCorrect(); generateRandomDigit(N); generateRandomArray());
-		CASE(N = 10; generateMixedCorrect(); generateIncreasingDigit(N); generateRandomArray());
-		CASE(N = 10; generateMixedCorrect(); generateRandomDigit(5); generateRandomArray());
+		CASE(N = 1000; generateAllIncorrect(); generateRandomArray());
+		CASE(N = 100; generateMixedCorrect(); generateRandomArray());
+		CASE(N = 10; generateMixedCorrect(); generateRandomArray());
+		CASE(N = 10; generateMixedCorrect(); generateRandomArray());
 		
-		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateSomeMaxArray());
-		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateRandomArray());
-		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateAllMaxArray());
-		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateSomeMaxArray());
-		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateRandomArray());
-		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateAllMaxArray());
-		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateIncreasingDigit(rnd.nextInt(1, MAXN)); generateRandomArray());
-		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateDecreasingDigit(rnd.nextInt(1, MAXN)); generateSomeMaxArray());
+		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomArray());
+		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomArray());
+		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)));
+		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomArrayWithPrefix(rnd.nextInt(max(0, N-10), N)));
+		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomArray());
+		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)));
+		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomArray());
+		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)));
 
-		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateSomeMaxArray(); mutateAll(4));
-		CASE(N = rnd.nextInt(1, MAXN); generateAllCorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateRandomArray(); mutateCorrect(10));
-		CASE(N = rnd.nextInt(1, MAXN); generateAllCorrect(); generateRandomDigit(rnd.nextInt(1, MAXN)); generateRandomArray(); mutateNoLeading(10));
-		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateDecreasingDigit(rnd.nextInt(1, MAXN)); generateSomeMaxArray(); mutateCorrect(5));
-		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateDecreasingDigit(rnd.nextInt(1, MAXN)); generateSomeMaxArray(); mutateAll(100));
+		CASE(N = rnd.nextInt(1, MAXN); generateAllIncorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)); mutateAll(4));
+		CASE(N = rnd.nextInt(1, MAXN); generateAllCorrect(); generateRandomArray(); mutateCorrect(10));
+		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)); mutateCorrect(5));
+		CASE(N = rnd.nextInt(1, MAXN); generateMixedCorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)); mutateAll(100));
 
-		CASE(N = MAXN; generateAllIncorrect(); generateRandomDigit(N); generateRandomArray());
-		CASE(N = MAXN; generateAllCorrect(); generateRandomDigit(N); generateRandomArray());
-		CASE(N = MAXN; generateMixedCorrect(); generateRandomDigit(N); generateRandomArray());
-		CASE(N = MAXN; generateMixedCorrect(); generateRandomDigit(N); generateSomeMaxArray());
-		CASE(N = MAXN; generateMixedCorrect(); generateRandomDigit(N); generateAllMaxArray());
-		CASE(N = MAXN; generateMixedCorrect(); generateDecreasingDigit(N); generateRandomArray());
+		CASE(N = MAXN; generateAllIncorrect(); generateRandomArray());
+		CASE(N = MAXN; generateAllCorrect(); generateRandomArray());
+		CASE(N = MAXN; generateMixedCorrect(); generateRandomArray());
+		CASE(N = MAXN; generateMixedCorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)));
+		CASE(N = MAXN; generateMixedCorrect(); generateRandomArrayWithPrefix(rnd.nextInt(1, N)));
+		CASE(N = MAXN; generateMixedCorrect(); generateRandomArray());
 		
 	}
 
 private:
 	
 	void ManualTestCases(){
-		CASE(N = 7; cor = "0001010"; S = "100000000000000000000000000000000000000";
+		CASE(N = 7; cor = "0001010";
 			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
 			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "0001010"; S = "19999";
+		CASE(N = 7; cor = "0001010";
 			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
 			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "1001010"; S = "100000000000000000000000000000000000000";
+		CASE(N = 7; cor = "1001010";
 			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
 			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "1001010"; S = "991888";
+		CASE(N = 7; cor = "1001010";
 			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
 			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "1001010"; S = "991788";
+		CASE(N = 7; cor = "1001010";
 			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
 			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 4; cor = "1111"; S = "100000"; ar.pb(EmptySegment); ar.pb(EmptySegment);
+		CASE(N = 4; cor = "1111"; ar.pb(EmptySegment); ar.pb(EmptySegment);
 			ar.pb(EmptySegment); ar.pb(EmptySegment));
-		CASE(N = 10; cor = "1011101101"; S = "7000011222"; ar.pb(Segment[7]); ar.pb(EmptySegment);
+		CASE(N = 10; cor = "1011101101"; ar.pb(Segment[7]); ar.pb(EmptySegment);
 			ar.pb(Segment[0]);ar.pb(Segment[0]);ar.pb(Segment[0]);ar.pb(getSegmentFromBit((1 << 1) + (1 << 5)));
 			ar.pb(Segment[1]);ar.pb(Segment[2]);ar.pb(getSegmentFromBit((1 << 1) + (1 << 5)));ar.pb(Segment[2]));
 	}
@@ -149,7 +145,7 @@ private:
 	char generateFirstDigit(){
 		return rnd.nextInt(1, 9) + '0';
 	}
-	
+	/*
 	void generateRandomDigit(int size){
 		S += generateFirstDigit();
 		for(int i = 1; i < size; ++i){
@@ -185,7 +181,7 @@ private:
 				S += num_now + '0';
 			}
 		}
-	}
+	}*/
 	
 	void generatePrefixArray(int len){
 		for(int i = 0;i < len; ++i){
@@ -195,13 +191,8 @@ private:
 	
 	/* Generate Array */
 	void generateRandomArray(){
-		int len = (int) N - (int) S.length();
-		generatePrefixArray(len);
-		
-		int mulaiS = max(0, -len);
-		for(int i = mulaiS, j = max(len, 0);i < (int)S.length(); ++i, ++j){
-			int cor_now = cor[j] - '0';
-			int val_now = S[i] - '0';
+		for(int i = 0;i < N; ++i){
+			int cor_now = cor[i] - '0';
 			if(cor_now == 1){
 				ar.push_back(Segment[rnd.nextInt(10)]);
 			}
@@ -211,7 +202,38 @@ private:
 			}
 		}
 	}
-	
+
+	void generateRandomArrayWithPrefix(int len){
+		generatePrefixArray(len);
+		for(int i = len; i < N; ++i){
+			int cor_now = cor[i] - '0';
+			if(cor_now == 1){
+				ar.push_back(Segment[rnd.nextInt(10)]);
+			}
+			else{
+				int rand_bitmask = rnd.nextInt(1 << 10);
+				ar.push_back(getSegmentFromBit(rand_bitmask));
+			}
+		}	
+	}
+	/*
+	void generateRandomArray(){
+		int len = (int) N - (int) S.length();
+		generatePrefixArray(len);
+		
+		int mulaiS = max(0, -len);
+		for(int i = mulaiS, j = max(len, 0);i < (int)S.length(); ++i, ++j){
+			int cor_now = cor[j] - '0';
+			if(cor_now == 1){
+				ar.push_back(Segment[rnd.nextInt(10)]);
+			}
+			else{
+				int rand_bitmask = rnd.nextInt(1 << 10);
+				ar.push_back(getSegmentFromBit(rand_bitmask));
+			}
+		}
+	}*/
+	/*
 	void generateSomeMaxArray(){
 		int len = (int) N - (int) S.length();
 		generatePrefixArray(len);
@@ -231,8 +253,8 @@ private:
 				ar.push_back(getSegmentFromBit(rand_bitmask));
 			}
 		}
-	}
-	
+	}*/
+	/*
 	void generateAllMaxArray(){
 		int len = (int) N - (int) S.length();
 		generatePrefixArray(len);
@@ -249,7 +271,7 @@ private:
 				ar.push_back(getSegmentFromBit(rand_bitmask));
 			}
 		}
-	}
+	}*/
 	void mutateArrayIdx(int idx, bool correct = false){
 		if(correct && rnd.nextInt(5)){
 			ar[idx] = Segment[rnd.nextInt(10)];
@@ -277,14 +299,15 @@ private:
 			mutateArrayIdx(idx_correct[i], true);
 		}
 	}
-	
+	/*
 	void mutateNoLeading(int amount){
 		int start_n = max((int) N - (int) S.length(), 0);
 		for(int i = 0;i < amount; ++i){
 			int idx = rnd.nextInt(start_n, N);
 			mutateArrayIdx(idx);
 		}
-	}
+	}*/
+
 	vector<int> AND(const vector<int>& v1, const vector<int>& v2){
 		vector<int> result;
 		for(int i = 0;i < v1.size(); ++i){
