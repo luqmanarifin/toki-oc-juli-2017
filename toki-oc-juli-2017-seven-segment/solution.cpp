@@ -8,7 +8,7 @@ using namespace std;
 
 const int SEVEN = 7;
 const int N = 1e5;
-const int MOD = 1e9 + 7;
+const int MOD = 1e9 + 8;
 const int MAX_DIG = 10;
 
 enum {
