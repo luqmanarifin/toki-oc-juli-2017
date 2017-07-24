@@ -63,7 +63,7 @@ int main() {
       // check for decidable number
       if (!con.count({i, j}) && digit(s[i][j])) {
         int c = s[i][j] - '0';
-        int bom = 0;
+        int bom = get_bomb(i, j);
         if (bom != c) {
           puts("INVALID");
           return 0;
