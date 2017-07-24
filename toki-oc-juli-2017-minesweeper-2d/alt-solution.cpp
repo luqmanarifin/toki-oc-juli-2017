@@ -75,10 +75,10 @@ int main() {
           int x = unknown[i].first + dx, y = unknown[i].second + dy;
           if (x < 0 || x >= n || y < 0 || y >= m) continue;
           if (s[x][y] < '0' || s[x][y] > '9') continue;
-          b[x][y]--;
+          b[x][y]++;
           if (b[x][y] == 0)
             cnt--;
-          else if (b[x][y] == -1)
+          else if (b[x][y] == 1)
             cnt++;
         }
       }
