@@ -101,7 +101,8 @@ void setup(){
 
 	scanf("%d", &n);
 	scanf("%s", correct);
-	scanf("%s", _arr);
+	memset(_arr, 0, sizeof _arr);
+	for(int i = 0;i <= N; ++i) _arr[i] = '9';
 	strcpy(num, _arr);
 
 	int lenArr = strlen(_arr);
