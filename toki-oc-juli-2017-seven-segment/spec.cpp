@@ -30,6 +30,10 @@ protected:
 		CONS(eachElementBetween(ar, 0, 1));
 	}
 
+	void Subtask1(){
+
+	}
+
 private:
 	bool eachVectorLength(const vector<vector<int> > &ar, int len){
 		for(vector<int> v : ar){
@@ -57,10 +61,47 @@ protected:
 	}
 
 	void SampleTestCase1(){
-		Input({"3", "101", "0 1 1 0 0 0 0", "0 0 0 0 0 0 0", "1 1 1 1 1 1 0"});
+		Subtasks({1});
+		Input({"2", "01", "0 0 0 0 0 0 0", "1 1 1 1 1 1 0"});
 		Output({"10"});
 	}
-	void TestCases(){
+
+	void SampleTestCase2(){
+		Subtasks({1});
+		Input({"3", "110", "1 1 1 1 1 1 0", "1 1 1 1 1 1 0", "0 1 1 0 0 0 0"});
+		Output({"0"});
+	}
+
+	void SampleTestCase3(){
+		Subtasks({1});
+		Input({"2", "01", "1 1 1 1 1 1 1", "0 0 0 0 0 0 0"});
+		Output({"0"});
+	}
+
+	void SampleTestCase4(){
+		Subtasks({1});
+		Input({"2", "00", "1 1 1 1 1 1 0", "1 1 1 1 1 1 0"});
+		Output({"2"});
+	}
+
+	void SampleTestCase5(){
+		Subtasks({1});
+		Input({"2", "00", "1 1 0 0 0 0 0", "0 0 0 0 0 0 0"});
+		Output({"50"});
+	}
+
+	void SampleTestCase6(){
+		Subtasks({1});
+		Input({"7", "1001010", "0 0 0 0 0 0 0", 
+			"0 0 0 0 0 0 0", "0 0 0 0 0 0 0", 
+			"0 1 1 0 0 0 0", "1 1 1 1 1 1 0", 
+			"1 1 1 1 1 1 1", "0 0 0 0 0 0 0"});
+		Output({"2000"});
+	}
+
+	void TestGroup1(){
+		Subtasks({1});
+
 		CASE(N = 1; cor = "0"; ar.push_back(EmptySegment));
 		CASE(N = 1; cor = "1"; ar.push_back(EmptySegment));
 		/* Manual Test Case */
@@ -99,19 +140,8 @@ protected:
 private:
 	
 	void ManualTestCases(){
+		CASE(N = 3; cor = "101"; ar.pb(Segment[1]); ar.pb(EmptySegment); ar.pb(Segment[0]));
 		CASE(N = 7; cor = "0001010";
-			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
-			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "0001010";
-			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
-			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "1001010";
-			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
-			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "1001010";
-			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
-			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
-		CASE(N = 7; cor = "1001010";
 			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
 			ar.pb(Segment[1]);ar.pb(Segment[0]);ar.pb(Segment[8]);ar.pb(EmptySegment));
 		CASE(N = 4; cor = "1111"; ar.pb(EmptySegment); ar.pb(EmptySegment);
