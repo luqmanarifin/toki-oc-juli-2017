@@ -1,13 +1,13 @@
-Minesweeper 2D
+Minesweeper
 
 
 [Deskripsi]
 
-Suatu hari Pak Ganesh sedang bosan. Kemudian Pak Ganesh memutuskan untuk bermain satu-satunya game yang ada dikomputernya yaitu Minesweeper. Minesweeper adalah sebuah game pada sebuah grid berukuran NxM. Pada grid tersebut terdapat beberapa petak yang berisi bom. Pada awalnya semua petak pada grid tertutup dan tujuan dari game ini adalah untuk membuka semua petak yang tidak berisi bom.
+Suatu hari Pak Ganesh sedang bosan. Kemudian Pak Ganesh memutuskan untuk bermain satu-satunya game yang ada di komputernya yaitu Minesweeper. Minesweeper adalah sebuah game pada sebuah grid berukuran NxM. Pada grid tersebut terdapat beberapa petak yang berisi bom. Pada awalnya semua petak pada grid tertutup dan tujuan dari game ini adalah untuk membuka semua petak yang tidak berisi bom.
 
-Jika pemain membuka petak yang berisi bom maka permainan berakhir dan pemain dinyatakan kalah. Namun jika petak yang dibuka tidak berisi bom maka pada petak tersebut akan tertulis angka yang menyatakan petunjuk jumlah bom yang terdapat pada petak-petak tetangganya. Petak pada kolom A dan baris B dinyatakan bertetangga dengan petak pada kolom P dan baris Q jika memenuhi |A-P| <= 1 dan |B-Q| <= 1. Untuk mempermudah permainan, pemain bisa memberikan tanda pada petak yang diyakini berisi bom sehingga pemain tidak perlu menghafal semua petak yang sudah diyakini berisi bom. Jika semua petak yang tidak berisi bom sudah terbuka maka permainan akan berakhir dan permain dinyatakan menang.
+Jika pemain membuka petak yang berisi bom maka permainan berakhir dan pemain dinyatakan kalah. Namun jika petak yang dibuka tidak berisi bom maka pada petak tersebut akan tertulis angka yang menyatakan petunjuk jumlah bom yang terdapat pada petak-petak tetangganya. Petak pada kolom A dan baris B dinyatakan bertetangga dengan petak pada kolom P dan baris Q jika memenuhi |A-P| <= 1 dan |B-Q| <= 1. Untuk mempermudah permainan, pemain bisa memberikan tanda pada petak yang diyakini berisi bom sehingga pemain tidak perlu menghafal semua petak yang sudah diyakini berisi bom. Jika semua petak yang tidak berisi bom sudah terbuka maka permainan akan berakhir dan pemain dinyatakan menang.
 
-Pak Ganesh sangat hebat dalam game Minesweeper dan belum pernah terkalahkan kecuali jika hanya ada error pada game tersebut. Namun ternyata game Minesweeper yang ada dikomputer Pak Ganesh terdapat bug sehingga terkadang angka petunjuk pada petak yang sudah terbuka tidak sesuai dengan yang seharusnya. Pak Ganesh sangat tidak suka jika hal tersebut terjadi. Sehingga Pak Ganesh meminta bantuan Anda sebagai orang yang lebih mengerti pemrograman komputer untuk membuatkannya sebuah program untuk mengecek apakah game Minesweeper yang sedang dimainkannya memberikan petunjuk yang valid atau tidak.
+Pak Ganesh sangat hebat dalam game Minesweeper dan belum pernah terkalahkan kecuali jika hanya ada error pada game tersebut. Namun ternyata game Minesweeper yang ada di komputer Pak Ganesh terdapat bug sehingga terkadang angka petunjuk pada petak yang sudah terbuka tidak sesuai dengan yang seharusnya. Pak Ganesh sangat tidak suka jika hal tersebut terjadi. Sehingga Pak Ganesh meminta bantuan Anda sebagai orang yang lebih mengerti pemrograman komputer untuk membuatkannya sebuah program untuk mengecek apakah game Minesweeper yang sedang dimainkannya memberikan petunjuk yang valid atau tidak.
 
 
 [Format Masukan]
@@ -27,7 +27,7 @@ Sebuah baris berisi "VALID" jika petunjuk yang diberikan benar atau "INVALID" ji
 3 3
 2**
 *4?
-11*
+12*
 
 
 [Contoh Keluaran 1]
@@ -40,7 +40,7 @@ VALID
 3 3
 2**
 *5?
-11*
+12*
 
 
 [Contoh Keluaran 2]
