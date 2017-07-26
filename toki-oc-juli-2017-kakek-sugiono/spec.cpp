@@ -19,16 +19,22 @@ class ProblemSpec : public BaseProblemSpec {
   void Constraints() {
     CONS(0 <= N && N <= 1000);
   }
+
+  void Subtask1(){
+      Points(100);
+  }
 };
 
 class TestSpec : public BaseTestSpec<ProblemSpec> {
 protected:
   void SampleTestCase1() {
+    Subtasks({1});
     Input({"4"});
     Output({"19"});
   }
 
-  void TestCases() {
+  void TestGroup1() {
+    Subtasks({1});
     int nKasusKecil = 10;
     int nKasusRandom = 10;
     int nKasusBesar = 10;
