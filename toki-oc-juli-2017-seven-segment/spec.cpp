@@ -31,7 +31,7 @@ protected:
 	}
 
 	void Subtask1(){
-
+		Points(100);
 	}
 
 private:
