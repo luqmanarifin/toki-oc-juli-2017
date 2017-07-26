@@ -86,8 +86,8 @@ protected:
 
 	void SampleTestCase5(){
 		Subtasks({1});
-		Input({"2", "00", "1 1 0 0 0 0 0", "0 0 0 0 0 0 0"});
-		Output({"50"});
+		Input({"1", "1", "1 0 0 0 0 0 0"});
+		Output({"0"});
 	}
 
 	void SampleTestCase6(){
@@ -140,6 +140,7 @@ protected:
 private:
 	
 	void ManualTestCases(){
+		CASE(N = 2; cor = "00"; ar.pb(getSegmentFromBit((1 << 2) + (1 << 7))); ar.pb(EmptySegment));
 		CASE(N = 3; cor = "101"; ar.pb(Segment[1]); ar.pb(EmptySegment); ar.pb(Segment[0]));
 		CASE(N = 7; cor = "0001010";
 			ar.pb(EmptySegment);ar.pb(EmptySegment);ar.pb(EmptySegment);
