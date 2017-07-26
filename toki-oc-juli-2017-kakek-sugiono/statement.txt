@@ -1,12 +1,14 @@
-Kakek Sugiono
+Kakek Sugih
 
 [Deskripsi]
 
-Kakek Sugiono mempunyai N permen yang berbeda. Ia mempunyai 2 cucu yang bernama Rutfa dan Harma. Kakek Sugiono merupakan seorang yang sangat dermawan, sehingga beliau sering menyisihkan sebagian permennya untuk diberikan ke panti asuhan. 
+Kakek Sugih mempunyai N permen yang berbeda. Ia mempunyai 2 cucu yang bernama Rutfa dan Harma. Kakek Sugih merupakan seorang yang sangat dermawan, sehingga beliau sering menyisihkan sebagian permennya untuk diberikan ke panti asuhan. 
 
-Kakek Sugiono akan menyisihkan K permen untuk diberikan ke panti asuhan dan sisanya ((N - K) permen) akan diberikan ke kedua cucunya. Kakek Sugiono tidak ingin kedua cucunya bertengkar, sehingga kakek Sugiono harus dapat membagikan permen berjumlah sama ke masing-masing cucunya. 
+Kakek Sugih akan menyisihkan X permen untuk diberikan ke panti asuhan, Y permen untuk Rutfa, dan (N - X - Y) permen untuk Harma. Kakek Sugih tidak ingin kedua cucunya bertengkar, sehingga Kakek Sugih harus dapat membagikan permen berjumlah sama kepada masing-masing Rutfa dan Harma.
 
-Kakek Sugiono penasaran, berapakah total cara pemilihan permen yang berbeda untuk setiap K dari (0 ≤ K ≤ N)? Karena hasilnya terlalu besar, ia hanya meminta keluarkan hasilnya dimodulo 1.000.000.007.
+Kakek Sugih penasaran, berapakah total cara pemilihan permen yang mungkin? Pemilihan permen dikatakan berbeda apabila ada minimal satu permen yang diberikan kepada subjek yang berbeda.  
+
+Karena hasilnya terlalu besar, ia hanya meminta keluarkan hasilnya dimodulo 1.000.000.007.
 
 [Format Masukan]
 
@@ -18,20 +20,12 @@ Sebuah baris berisi banyaknya cara pemilihan permen yang berbeda.
 
 [Contoh Masukan]
 
-2
+4
 
 [Contoh Keluaran]
 
-2
-
-[Penjelasan]
-
-untuk K = 0, banyaknya cara memilih = 1
-untuk K = 1, banyaknya cara memilih = 0
-untuk K = 2, banyaknya cara memilih = 1
-
-Total cara pemilihan permen = 1 + 0 + 1 = 2.
+19
 
 [Batasan]
 
-0 ≤ N ≤ 1.000.000.000
+0 ≤ N ≤ 1.000
