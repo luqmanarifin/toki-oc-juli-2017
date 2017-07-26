@@ -16,7 +16,7 @@ void dfs(int v) {
     if (u == par[v]) continue;
     par[u] = v;
     cost[u] = it.second;
-    col[u] = 1 - col[v];
+    col[u] = col[v] ^ (it.second & 1);
     dfs(u);
     cnt[v][0] += cnt[u][0];
     cnt[v][1] += cnt[u][1];
