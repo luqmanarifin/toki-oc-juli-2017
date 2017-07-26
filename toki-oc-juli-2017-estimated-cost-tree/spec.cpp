@@ -33,6 +33,7 @@ protected:
     CONS(U.size() == N-1 && V.size() == N-1 && C.size() == N-1);
     CONS(DifferentElements(U, V));
     CONS(UniquePairs(U, V));
+    CONS(Connected(U, V, N));
   }
 
 private:
@@ -68,6 +69,29 @@ private:
 
     return true;
   }
+
+  int root(int * parent, int u) { return parent[u] = (parent[u] == u? u : root(parent, parent[u]));}
+  bool sama(int * parent, int u, int v) {return root(parent, u) == root(parent, v);}
+  void uni(int * parent, int u, int v) {parent[root(parent, u)] = root(parent, v);}
+
+  bool Connected(vector<int> u, vector<int> v, int n) {
+    int parent[n+1];
+
+    for(int i = 1; i <= n; i++) {
+      parent[i] = i;
+    }
+
+    for(int i = 0; i < u.size(); i++) {
+      uni(parent, u[i], v[i]);
+    }
+
+    int akar = root(parent, 1);
+    for(int i = 2; i <= n; i++) {
+      if (root(parent, i) != akar) return false;
+    }
+
+    return true;
+  }
 };
 
 class TestSpec : public BaseTestSpec<ProblemSpec> {
@@ -79,7 +103,7 @@ protected:
       "2 3 1"
     });
     Output({
-      "6"
+      "8"
     });
   }
 
@@ -88,33 +112,51 @@ protected:
   }
 
   void TestCases() {
-    int nLittleCase = 10;
-    int nBigCase = 10;
+    int nLittleCase = 5;
+    int nBigCase = 5;
     int nMaxCase = 5;
 
     // Sama aja linear star atau random juga
     CASE(N = 1, LinearTree(1, 1));
+    CASE(N = 1, LinearTree(2, 2));
     CASE(N = 2, LinearTree(1, 100));
+    CASE(N = 2, LinearTree(1, 50, 2, 0));
+    CASE(N = 2, LinearTree(1, 50, 2, -1));
 
     // Random Kecil
     CASE(N = rnd.nextInt(100, 1000), LinearTree(1, 100));
+    CASE(N = rnd.nextInt(100, 1000), LinearTree(1, 50, 2, 0));
+    CASE(N = rnd.nextInt(100, 1000), LinearTree(1, 50, 2, -1));
     CASE(N = rnd.nextInt(100, 1000), StarGraph(1, 100));
+    CASE(N = rnd.nextInt(100, 1000), StarGraph(1, 50, 2, 0));
+    CASE(N = rnd.nextInt(100, 1000), StarGraph(1, 50, 2, -1));
     for(int i = 0; i < nLittleCase; i++) {
       CASE(N = rnd.nextInt(100, 1000), RandomTree(1, 100));
+      CASE(N = rnd.nextInt(100, 1000), RandomTree(1, 50, 2, 0));
+      CASE(N = rnd.nextInt(100, 1000), RandomTree(1, 50, 2, -1));
     }
 
     // Random Besar
     CASE(N = rnd.nextInt(50000, 100000), LinearTree(1, 100));
+    CASE(N = rnd.nextInt(50000, 100000), LinearTree(1, 50, 2, 0));
+    CASE(N = rnd.nextInt(50000, 100000), LinearTree(1, 50, 2, -1));
     CASE(N = rnd.nextInt(50000, 100000), StarGraph(1, 100));
+    CASE(N = rnd.nextInt(50000, 100000), StarGraph(1, 50, 2, 0));
+    CASE(N = rnd.nextInt(50000, 100000), StarGraph(1, 50, 2, -1));
     for(int i = 0; i < nBigCase; i++) {
       CASE(N = rnd.nextInt(50000, 100000), RandomTree(1, 100));
+      CASE(N = rnd.nextInt(50000, 100000), RandomTree(1, 50, 2, 0));
+      CASE(N = rnd.nextInt(50000, 100000), RandomTree(1, 50, 2, -1));
     }
 
     // Max Case
-    CASE(N = 100000, LinearTree(1e7, 100));
-    CASE(N = 100000, StarGraph(1e7, 100));
+    CASE(N = 100000, LinearTree(100, 100));
+    CASE(N = 100000, LinearTree(99, 99));
+    CASE(N = 100000, StarGraph(100, 100));
+    CASE(N = 100000, StarGraph(99, 99));
     for(int i = 0; i < nMaxCase; i++) {
-      CASE(N = 100000, RandomTree(1e7, 100));
+      CASE(N = 100000, RandomTree(100, 100));
+      CASE(N = 100000, RandomTree(99, 99));
     }
   }
 
@@ -125,7 +167,7 @@ private:
     rnd.shuffle(mapping.begin(), mapping.end());
   }
 
-  void LinearTree(int minC, int maxC) {
+  void LinearTree(int minC, int maxC, int multiplier = 1, int adder = 0) {
     vector<int> mapping;
     GenerateRandomMapping(N, mapping);
 
@@ -133,17 +175,17 @@ private:
       if (rnd.nextInt(2) == 0) {
         U.push_back(mapping[i]);
         V.push_back(mapping[i-1]);
-        C.push_back(rnd.nextInt(minC, maxC));
+        C.push_back(rnd.nextInt(minC, maxC)*multiplier + adder);
       }
       else {
         U.push_back(mapping[i-1]);
         V.push_back(mapping[i]);
-        C.push_back(rnd.nextInt(minC, maxC));
+        C.push_back(rnd.nextInt(minC, maxC)*multiplier + adder);
       }
     }
   }
 
-  void StarGraph(int minC, int maxC) {
+  void StarGraph(int minC, int maxC, int multiplier = 1, int adder = 0) {
     vector<int> mapping;
     GenerateRandomMapping(N, mapping);
 
@@ -151,17 +193,17 @@ private:
       if (rnd.nextInt(2) == 0) {
         U.push_back(mapping[i]);
         V.push_back(mapping[0]);
-        C.push_back(rnd.nextInt(minC, maxC));
+        C.push_back(rnd.nextInt(minC, maxC)*multiplier + adder);
       }
       else {
         U.push_back(mapping[0]);
         V.push_back(mapping[i]);
-        C.push_back(rnd.nextInt(minC, maxC));
+        C.push_back(rnd.nextInt(minC, maxC)*multiplier + adder);
       }
     }
   }
 
-  void RandomTree(int minC, int maxC) {
+  void RandomTree(int minC, int maxC, int multiplier = 1, int adder = 0) {
     vector<int> mapping;
     GenerateRandomMapping(N, mapping);
 
@@ -169,12 +211,12 @@ private:
       if (rnd.nextInt(2) == 0) {
         U.push_back(mapping[i]);
         V.push_back(mapping[rnd.nextInt(i)]);
-        C.push_back(rnd.nextInt(minC, maxC));
+        C.push_back(rnd.nextInt(minC, maxC)*multiplier + adder);
       }
       else {
         U.push_back(mapping[rnd.nextInt(i)]);
         V.push_back(mapping[i]);
-        C.push_back(rnd.nextInt(minC, maxC));
+        C.push_back(rnd.nextInt(minC, maxC)*multiplier + adder);
       }
     }
   }
