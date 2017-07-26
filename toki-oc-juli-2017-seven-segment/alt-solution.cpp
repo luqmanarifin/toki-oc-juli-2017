@@ -44,7 +44,7 @@ int main() {
           }
         }
         //printf("digit %d\n", i);
-        assert(cnt == 1);
+        //assert(cnt == 1);
       }
     } else {
       if (mask[i] == 0) {
