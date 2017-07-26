@@ -29,7 +29,7 @@ protected:
     CONS(1 <= N && N <= 1e5);
     CONS(ElementsBetween(U, 1, N));
     CONS(ElementsBetween(V, 1, N));
-    CONS(ElementsBetween(C, 1, (int) 1e7));
+    CONS(ElementsBetween(C, 1, 100));
     CONS(U.size() == N-1 && V.size() == N-1 && C.size() == N-1);
     CONS(DifferentElements(U, V));
     CONS(UniquePairs(U, V));
@@ -79,7 +79,7 @@ protected:
       "2 3 1"
     });
     Output({
-      "8"
+      "6"
     });
   }
 
@@ -94,27 +94,27 @@ protected:
 
     // Sama aja linear star atau random juga
     CASE(N = 1, LinearTree(1, 1));
-    CASE(N = 2, LinearTree(1, 1e7));
+    CASE(N = 2, LinearTree(1, 100));
 
     // Random Kecil
-    CASE(N = rnd.nextInt(100, 1000), LinearTree(1, 1e7));
-    CASE(N = rnd.nextInt(100, 1000), StarGraph(1, 1e7));
+    CASE(N = rnd.nextInt(100, 1000), LinearTree(1, 100));
+    CASE(N = rnd.nextInt(100, 1000), StarGraph(1, 100));
     for(int i = 0; i < nLittleCase; i++) {
-      CASE(N = rnd.nextInt(100, 1000), RandomTree(1, 1e7));
+      CASE(N = rnd.nextInt(100, 1000), RandomTree(1, 100));
     }
 
     // Random Besar
-    CASE(N = rnd.nextInt(50000, 100000), LinearTree(1, 1e7));
-    CASE(N = rnd.nextInt(50000, 100000), StarGraph(1, 1e7));
+    CASE(N = rnd.nextInt(50000, 100000), LinearTree(1, 100));
+    CASE(N = rnd.nextInt(50000, 100000), StarGraph(1, 100));
     for(int i = 0; i < nBigCase; i++) {
-      CASE(N = rnd.nextInt(50000, 100000), RandomTree(1, 1e7));
+      CASE(N = rnd.nextInt(50000, 100000), RandomTree(1, 100));
     }
 
     // Max Case
-    CASE(N = 100000, LinearTree(1e7, 1e7));
-    CASE(N = 100000, StarGraph(1e7, 1e7));
+    CASE(N = 100000, LinearTree(1e7, 100));
+    CASE(N = 100000, StarGraph(1e7, 100));
     for(int i = 0; i < nMaxCase; i++) {
-      CASE(N = 100000, RandomTree(1e7, 1e7));
+      CASE(N = 100000, RandomTree(1e7, 100));
     }
   }
 
