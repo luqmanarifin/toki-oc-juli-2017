@@ -5,7 +5,7 @@ using namespace std;
 const int N = 1e5 + 5;
 const int mod = 1e9 + 8;
 
-const int BIL[] = {63, 6, 91, 79, 102, 109, 125, 7, 127, 111};
+const int BIL[] = {63, 6, 91, 79, 102, 109, 125, 7, 127, 103};
 
 char exact[N];
 int mask[N];
