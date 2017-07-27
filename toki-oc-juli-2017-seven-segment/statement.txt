@@ -13,13 +13,13 @@ Setelah confess, si gebetan yang ternyata mantan team inti ECM-EZPZ kampus tidak
 
 Ketika memberi tantangan, gebetan Radit menoleh ke seven segment dekat traffic light.
 
-Diberikan sebuah konfigurasi seven-segment yang terdiri dari beberapa digit. Untuk setiap digit, bisa saja seven-segment digit tersebut rusak atau berfungsi normal.
+Diberikan sebuah konfigurasi seven-segment yang terdiri dari beberapa digit. Untuk setiap digit, bisa saja seven-segment pada digit tersebut rusak atau berfungsi normal.
 
-Apabila seven-segment digit berfungsi normal, maka segment yang hidup akan menunjukkan konfigurasi seven-segment yang sebenarnya. Segment pada digit yang berfungsi normal belum tentu merepresentasikan angka yang benar.
+Apabila seven-segment pada digit berfungsi normal, maka segment yang hidup akan menunjukkan konfigurasi seven-segment yang sebenarnya. Segment pada digit yang berfungsi normal belum tentu merepresentasikan angka yang benar.
 
-Apabila seven-segment digit tersebut rusak, maka segment yang padam bisa jadi sebenarnya hidup (tetapi rusak sehingga padam). Segment yang hidup akan tetap hidup selamanya.
+Apabila seven-segment pada digit tersebut rusak, maka segment yang padam bisa jadi sebenarnya hidup (tetapi rusak sehingga padam). Segment yang hidup akan tetap hidup selamanya.
 
-Aturan penulisan bilangan mengikuti kaidah biasanya. Seperti: tidak boleh ada leading-zero kecuali nol, penulisan digit rata kanan, seluruh digit pada seven-segment harus padam sebelum digit pertama. 
+Aturan penulisan bilangan mengikuti kaidah biasanya. Seperti: tidak boleh ada leading-zero kecuali angka nol, penulisan digit rata kanan, seluruh digit pada seven-segment harus padam sebelum digit pertama. 
 
 Radit diminta menentukan ada berapa banyak angka berbeda yang mungkin dipresentasikan seven-segment tersebut.
 
@@ -35,15 +35,19 @@ Gambar 2 Konvensi digit seven-segment. Angka pada segment mengikuti konvensi di 
 
 Baris pertama berisi sebuah bilangan bulat N. Banyak digit pada konfigurasi seven-segment.
 
-Baris kedua berisi sebuah string dengan panjang N karakter yang hanya berisi '0' atau '1'. Apabila karakter ke-i berisi '1', maka seven-segment digit ke-i berfungsi normal. Apabila '0', maka seven-segment digit tersebut rusak.  
+Baris kedua berisi sebuah string dengan panjang N karakter yang hanya berisi '0' atau '1'. Apabila karakter ke-i berisi '1', maka seven-segment pada digit ke-i berfungsi normal. Apabila '0', maka seven-segment pada digit tersebut rusak.  
 
-Baris ketiga hingga baris N+2 berisi 7 buah karakter antara '0' atau '1'. Dalam satu baris:
+Baris ketiga hingga baris N+2 berisi 7 buah karakter antara '0' atau '1'.
+Karakter-karakter pada baris ke-(i+2) mewakili digit ke-i (one-based).
+Masing-masing baris terdiri dari tujuh karakter, mewakili seven-segment pada digit yang bersangkutan.
+
+Dalam satu baris:
 karakter pertama mewakili segment pada posisi A.
 karakter kedua mewakili segment pada posisi B.
 karakter ketiga mewakili segment pada posisi C.
 dst.
-Apabila pada baris ke-(i+2) karakter ke-j berisi '0', maka segment padam pada digit ke-i posisi ke-j.
-Apabila karakter berisi '1', maka segment tersebut nyala.  
+Apabila karakter berisi '0', artinya segment tersebut padam.
+Apabila karakter berisi '1', artinya segment tersebut nyala.  
 
 Ingat, bahwa angka yang mungkin dipresentasikan juga bergantung pada apakah digit tersebut berfungsi normal atau rusak.
 
@@ -51,7 +55,7 @@ Ingat, bahwa angka yang mungkin dipresentasikan juga bergantung pada apakah digi
 
 [Format Keluaran]
 
-Satu baris bilangan bulat. Banyak konfigurasi angka berbeda yang mungkin direpresentasikan, modulo 10^9 + 8.
+Sebuah bilangan bulat yang menyatakan banyaknya angka berbeda yang mungkin direpresentasikan, dimodulo dengan 10^9 + 8.
 
 
 [Contoh Masukan 1]
@@ -121,9 +125,9 @@ Pada contoh pertama, digit pertama rusak dan digit kedua berfungsi normal. Digit
 
 Pada contoh kedua, digit pertama berfungsi normal dan hanya bisa merepresentasikan angka nol. Perhatikan bahwa leading zero tidak valid. Tidak ada angka yang bisa direpresentasikan.
 
-Pada contoh ketiga, digit terakhir berfungsi normal dan hanya bisa merepresentasikan angka 'kosong'. Karena tidak ada angka yang punya 'angka kosong' di digit terakhir, maka tidak ada yang bisa direpresentasikan.
+Pada contoh ketiga, digit terakhir berfungsi normal dan hanya bisa merepresentasikan angka 'kosong'. Tidak ada angka yang mempunyai 'angka kosong' di digit terakhir, sehingga tidak ada angka yang dapat direpresentasikan.
 
-Pada contoh keempat, kedua digit rusak. Segment yang padam bisa saja sebenarnya nyala. Angka yang direpresentasikan adalah 80 dan 88.
+Pada contoh keempat, kedua digit rusak. Segment yang padam bisa saja sebenarnya nyala. Angka yang dapat direpresentasikan adalah 80 dan 88.
 
 Pada contoh kelima, digit berfungsi normal tapi tidak merepresentasikan angka apapun. 
 
