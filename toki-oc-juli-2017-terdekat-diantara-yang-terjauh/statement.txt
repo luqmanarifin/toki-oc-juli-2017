@@ -1,8 +1,8 @@
-Terdekat Diantara yang Terjauh
+Terdekat di Aantara yang Terjauh
 
 [Deskripsi]
 
-Diberikan sebuah pohon (tree) berukuran N. Setiap node dinamai dari 1 hingga N. Setiap node pada tree memiliki salah satu warna dari 1 hingga K (inklusif). Mungkin saja ada lebih dari 1 node yang memiliki warna yang sama, atau bisa saja tidak ada node yang memiliki warna tersebut. 
+Diberikan sebuah tree dengan N node. Setiap node dinamai dari 1 hingga N. Setiap node pada tree memiliki salah satu warna dari 1 hingga K (inklusif). Mungkin saja ada lebih dari 1 node yang memiliki warna yang sama, atau bisa saja ada warna yang tidak terdapat pada tree tersebut. 
 
 Terdapat dua fungsi F dan G. Kedua fungsi tersebut didefinisikan sebagai berikut:
 1. F(C, X) menyatakan jarak terjauh dari sebuah node X ke node yang memiliki warna C. Apabila tidak ada node yang memiliki warna C, F(C, X) bernilai 0.
@@ -10,11 +10,11 @@ Terdapat dua fungsi F dan G. Kedua fungsi tersebut didefinisikan sebagai berikut
 
 [Format Masukan]
 
-Baris pertama berisi dua bilangan bulat N dan K.
+Baris pertama berisi dua buah bilangan bulat N dan K.
 
-Baris kedua berisi N bilangan bulat C[i] (1 ≤ i ≤ N).
+Baris kedua berisi N buah bilangan bulat C[i] (1 ≤ i ≤ N).
 
-Setelah itu, terdapat N - 1 baris, setiap baris berisi 2 buah bilangan bulat x_i, y_i (1 ≤ x_i, y_i ≤ N; x_i ≠ y_i), menandakan bahwa terdapat jalan dua arah antara node x_i dan node y_i.
+N - 1 baris berikutnya masing-masing berisi 2 buah bilangan bulat x_i dan y_i yang menandakan bahwa terdapat jalan dua arah yang menghubungkan node x_i dan y_i.
 
 [Format Keluaran]
 
@@ -36,4 +36,6 @@ Sebuah baris berisi K buah bilangan bulat G(1), G(2), ... G(K).
 - 1 ≤ N ≤ 100.000
 - 1 ≤ K ≤ N
 - 1 ≤ C[i] ≤ K
+- 1 ≤ x_i, y_i ≤ N
+- x_i ≠ y_i
 - Dijamin graf yang diberikan merupakan sebuah pohon
