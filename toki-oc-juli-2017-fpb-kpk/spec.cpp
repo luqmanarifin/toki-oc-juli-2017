@@ -35,6 +35,10 @@ protected:
     CONS(countAllBetween(X, 1, int(1e5)));
     CONS(distinctElementForEachGroup(X));
   }
+
+  void Subtask1(){
+    Points(100);
+  }
 private:
   bool eachElementBetween(const vector<int>& v, int lo, int hi) {
     for (int x : v) {
@@ -86,6 +90,7 @@ private:
 class TestSpec : public BaseTestSpec<ProblemSpec> {
 protected:
   void SampleTestCase1() {
+    Subtasks({1});
     Input({
       "2",
       "2 2 27",
@@ -99,6 +104,7 @@ protected:
   }
 
   void SampleTestCase2() {
+    Subtasks({1});
     Input({
       "3",
       "1 4",
@@ -116,7 +122,8 @@ protected:
       X.clear();
   }
 
-  void TestCases() {
+  void TestGroup1() {
+    Subtasks({1});
     CASE(N = 1, K = {8}, X = {{1, 2, 4, 8, 16, 32, 64, 128}});
     CASE(N = 2, K = {1, 4}, X = {{2 * 3 * 5 * 7}, {2, 3, 5, 7}});
     CASE(N = 5, K = {4, 3, 2, 1, 5}, X = {{1, 4, 5, 11}, {3, 22, 26}, {99, 165}, {121}, {1, 20, 33, 70, 91}}); 
