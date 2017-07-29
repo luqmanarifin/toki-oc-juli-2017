@@ -44,8 +44,8 @@ private:
     }
     return true;
   }
-vector<bool> vis;
-vector< vector<int> > adj;
+  vector<bool> vis;
+  vector< vector<int> > adj;
   bool isTree(int n, const vector<int>& u, const vector<int>& v) {
     if (u.size() != n-1 || v.size() != n-1)
       return false;
@@ -91,18 +91,53 @@ protected:
   }
 
   void TestCases() {
+    // manual cases
     CASE(N = 1, K = 1, C = {1}, U = {}, V = {});
     CASE(N = 2, K = 1, C = {1, 1}, U = {1}, V = {2});
     CASE(N = 4, K = 2, C = {1, 1, 2, 2}, U = {1, 2, 2}, V = {2, 3, 4});
     CASE(N = 5, K = 2, C = {2, 2, 1, 2, 1}, U = {1, 2, 3, 2}, V = {2, 3, 4, 5});
+
+    // linear
     CASE(N = 100, K = N/3, randomColor(N, C, 1, K), randomLinear(N, U, V));
-    CASE(N = 100, K = N/3, randomColor(N, C, 1, K), randomTree(N, U, V));
     CASE(N = 5000, K = N/5, randomColor(N, C, 1, K), randomLinear(N, U, V));
+    CASE(N = 100000, K = 1, randomColor(N, C, 1, K), randomLinear(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(10, 50), randomColor(N, C, 1, K), randomLinear(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(100, 500), randomColor(N, C, 1, K), randomLinear(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(1000, 5000), randomColor(N, C, 1, K), randomLinear(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(10000, 50000), randomColor(N, C, 1, K), randomLinear(N, U, V));
+    CASE(N = 100000, K = N, randomColor(N, C, 1, K), randomLinear(N, U, V));
+
+    // balanced binary tree
+    CASE(N = 100000, K = rnd.nextInt(10, 50), randomColor(N, C, 1, K), balancedBinaryTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(100, 500), randomColor(N, C, 1, K), balancedBinaryTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(1000, 5000), randomColor(N, C, 1, K), balancedBinaryTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(10000, 50000), randomColor(N, C, 1, K), balancedBinaryTree(N, U, V));
+
+    // k-star tree
+    CASE(N = 100000, K = 1, randomColor(N, C, 1, K), kStarTree(N, N-1, U, V));
+    CASE(N = 100000, K = rnd.nextInt(10, 50), randomColor(N, C, 1, K), kStarTree(N, rnd.nextInt(3, 10), U, V));
+    CASE(N = 100000, K = rnd.nextInt(10, 50), randomColor(N, C, 1, K), kStarTree(N, rnd.nextInt(50000, N-2), U, V));
+    CASE(N = 100000, K = rnd.nextInt(100, 500), randomColor(N, C, 1, K), kStarTree(N, rnd.nextInt(3, 10), U, V));
+    CASE(N = 100000, K = rnd.nextInt(100, 500), randomColor(N, C, 1, K), kStarTree(N, rnd.nextInt(50000, N-1), U, V));
+    CASE(N = 100000, K = rnd.nextInt(1000, 10000), randomColor(N, C, 1, K), kStarTree(N, rnd.nextInt(3, 10), U, V));
+    CASE(N = 100000, K = rnd.nextInt(1000, 10000), randomColor(N, C, 1, K), kStarTree(N, rnd.nextInt(50000, N-1), U, V));
+    CASE(N = 100000, K = rnd.nextInt(50000, 100000), randomColor(N, C, 1, K), kStarTree(N, rnd.nextInt(3, 10), U, V));
+    CASE(N = 100000, K = rnd.nextInt(50000, 100000), randomColor(N, C, 1, K), kStarTree(N, N-1, U, V));
+
+    // random tree
+    CASE(N = 100, K = N/3, randomColor(N, C, 1, K), randomTree(N, U, V));
     CASE(N = 5000, K = N/5, randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 10000, K = N/100, randomColor(N, C, 1, K), randomTree(N, U, V));
     CASE(N = 50000, K = N/25, randomColor(N, C, 1, K), randomTree(N, U, V));
     CASE(N = 50000, K = N, randomColor(N, C, 1, K), randomTree(N, U, V));
-    CASE(N = 100000, K = N/25, randomColor(N, C, 1, K), randomLinear(N, U, V));
-    CASE(N = 100000, K = N/100, randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = 1, randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(2, 10), randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(10, 50), randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(50, 100), randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(100, 500), randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(1000, 5000), randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(10000, 50000), randomColor(N, C, 1, K), randomTree(N, U, V));
+    CASE(N = 100000, K = rnd.nextInt(50000, 100000), randomColor(N, C, 1, K), randomTree(N, U, V));
     CASE(N = 100000, K = N, randomColor(N, C, 1, K), randomTree(N, U, V));
   }
 private:
@@ -123,6 +158,30 @@ private:
       u[i] = permutation[u[i]-1];
       v[i] = permutation[v[i]-1];
     }
+  }
+
+  void balancedBinaryTree(int n, vector<int> &u, vector<int> &v) {
+    for (int i = 2; i <= n; i++) {
+      u.push_back(i);
+      v.push_back(i/2);
+    }
+    renumber(n, u, v);
+  }
+
+  void kStarTree(int n, int k, vector<int> &u, vector<int> &v) {
+    vector< int > child;
+    for (int i = 0; i < k; i++) {
+      u.push_back(1);
+      v.push_back(2 + i);
+      child.push_back(2 + i);
+    }
+    for (int i = k+2; i <= n; i++) {
+      int select = rnd.nextInt(0, k-1);
+      u.push_back(child[select]);
+      v.push_back(i);
+      child[select] = i;
+    }
+    renumber(n, u, v);
   }
 
   void randomTree(int n, vector<int>& u, vector<int>& v) {
