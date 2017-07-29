@@ -6,7 +6,7 @@ _Libur t'lah tiba! Libur t'lah tiba! Hore! Hore! Hore!_
 
 Sudah tiga bulan para siswa SDN Amhar Sani diliburkan. Karena merasa bosan dan takut melupakan materi, N siswa berkumpul dan bermain sebuah permainan yang cukup menguras otak.
 
-Pada mulanya, masing-masing dari mereka memilih K buah bilangan favorit (K setiap anak bisa saja berbeda). Dalam setiap sesi, setiap siswa harus menyebutkan sebuah bilangan dari bilangan favoritnya. Setelah semua siswa menyebutkan sebuah bilangan, mereka akan menghitung berapa Faktor Persekutuan Terbesar (FPB) nya.
+Pada mulanya, masing-masing dari mereka memilih K buah bilangan favorit (K setiap anak bisa saja berbeda). Dalam setiap sesi, setiap siswa harus menyebutkan sebuah bilangan dari daftar bilangan favoritnya. Setelah semua siswa menyebutkan sebuah bilangan, mereka akan menghitung nilai Faktor Persekutuan Terbesar (FPB) dari semua bilangan yang telah disebutkan pada sesi tersebut.
 
 Karena permainan ini terlalu mudah, Awkar (salah satu dari N siswa tersebut) menjadi penasaran. Berapa Kelipatan Persekutuan Terkecil (KPK) dari setiap FPB yang dihasilkan dari setiap sesi yang mungkin terjadi? Karena jawabannya bisa sangat besar, keluarkanlah dalam bentuk faktorisasi prima.
 
@@ -14,7 +14,7 @@ Setiap bilangan bulat A bisa disusun menjadi A = P_1 ^ Q_1 * P_2 ^ Q_2 * P_3 * .
 
 [Format Masukan]
 
-Baris pertama berisi sebuah bilangan bulat N, banyak siswa yang sedang berkumpul.
+Baris pertama berisi sebuah bilangan bulat N yang menyatakan banyaknya siswa yang sedang berkumpul.
 
 Untuk N baris berikutnya, pertama-tama akan diberikan sebuah bilangan bulat K_i, diikuti K_i buah bilangan bulat X_i_j yang merupakan bilangan favorit ke-j dari siswa ke-i.
 
@@ -22,7 +22,7 @@ Untuk N baris berikutnya, pertama-tama akan diberikan sebuah bilangan bulat K_i,
 
 Baris pertama berisi sebuah bilangan bulat M, banyaknya bilangan prima dalam faktorisasi prima jawaban.
 
-M baris berikutnya berisi dua buah bilangan bulat P_i dan Q_i, menyatakan bilangan prima dan pangkatnya. Keluaran harus terurut secara menaik berdasarkan bilangan primanya, dan Q_i harus lebih dari 0.
+M baris berikutnya berisi dua buah bilangan bulat P_i dan Q_i, menyatakan bilangan prima dan pangkatnya. Keluaran harus terurut secara menaik berdasarkan bilangan primanya dan nilai Q_i harus lebih dari 0.
 
 [Contoh Masukan]
 
@@ -41,13 +41,13 @@ M baris berikutnya berisi dua buah bilangan bulat P_i dan Q_i, menyatakan bilang
 3 2
 
 [Penjelasan]
-Sesi-sesi yang mungkin terjadi :
+Sesi-sesi yang mungkin terjadi yaitu:
 - Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 4, FPB yang dihasilkan 2.
 - Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 9, FPB yang dihasilkan 1.
 - Siswa pertama memilih bilangan 27, siswa kedua memilih bilangan 4, FPB yang dihasilkan 1.
 - Siswa pertama memilih bilangan 27, siswa kedua memilih bilangan 9, FPB yang dihasilkan 9.
 
-KPK dari setiap FPB yang dihasilkan (2, 1, 1, 9) adalah 18. Dari KPK tersebut, dapat difaktorisasi menjadi 18 = 2^1 * 3^2.
+KPK dari setiap FPB yang dihasilkan (2, 1, 1, dan 9) adalah 18. Nilai tersebut dapat difaktorisasi menjadi 18 = 2^1 * 3^2.
 
 [Batasan]
 
@@ -58,3 +58,5 @@ KPK dari setiap FPB yang dihasilkan (2, 1, 1, 9) adalah 18. Dari KPK tersebut, d
 1 ≤ X_i_j ≤ 10^7
 
 1 ≤ SUM(K_i) ≤ 10^5
+
+Untuk setiap i <= N, a <= K_i, b <= K_i, dan a /= b, X_i_a /= X_i_b
