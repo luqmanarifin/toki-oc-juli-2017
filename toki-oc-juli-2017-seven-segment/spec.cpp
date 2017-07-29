@@ -22,6 +22,10 @@ protected:
 		LINE(result);
 	}
 
+	void GradingConfig(){
+		TimeLimit(1);
+	}
+
 	void Constraints(){
 		CONS(1 <= N && N <= MAXN);
 		CONS((int)cor.size() == N);
