@@ -2,13 +2,13 @@ Kakek Sugih
 
 [Deskripsi]
 
-Kakek Sugih mempunyai N permen yang berbeda. Ia mempunyai 2 cucu yang bernama Rutfa dan Harma. Kakek Sugih merupakan seorang yang sangat dermawan, sehingga beliau sering menyisihkan sebagian permennya untuk diberikan ke panti asuhan. 
+Kakek Sugih mempunyai N permen yang berbeda. Ia mempunyai 2 cucu yang bernama Rutfa dan Harma. Kakek Sugih adalah orang yang sangat dermawan sehingga beliau sering menyisihkan sebagian permennya untuk diberikan ke panti asuhan. 
 
-Kakek Sugih akan menyisihkan X permen untuk diberikan ke panti asuhan, Y permen untuk Rutfa, dan (N - X - Y) permen untuk Harma. Kakek Sugih tidak ingin kedua cucunya bertengkar, sehingga Kakek Sugih harus dapat membagikan permen berjumlah sama kepada masing-masing Rutfa dan Harma.
+Kakek Sugih akan menyisihkan X permen untuk diberikan ke panti asuhan, Y permen untuk Rutfa, dan (N - X - Y) permen untuk Harma. Kakek Sugih tidak mungkin memberikan permen sejumlah bilangan negatif. Kakek Sugih tidak ingin kedua cucunya bertengkar, sehingga Kakek Sugih harus dapat membagikan permen berjumlah sama kepada masing-masing Rutfa dan Harma.
 
-Kakek Sugih penasaran, berapakah total cara pemilihan permen yang mungkin? Pemilihan permen dikatakan berbeda apabila ada minimal satu permen yang diberikan kepada subjek yang berbeda.  
+Kakek Sugih penasaran, berapakah banyak cara pembagian permen yang mungkin? Pembagian permen dikatakan berbeda apabila ada setidaknya satu permen yang diberikan kepada subjek yang berbeda. 
 
-Karena hasilnya terlalu besar, ia hanya meminta keluarkan hasilnya dimodulo 1.000.000.007.
+Karena banyaknya cara pembagian permen bisa sangat besar, ia meminta Anda untuk memberitahu hasilnya modulo 1.000.000.007.
 
 [Format Masukan]
 
