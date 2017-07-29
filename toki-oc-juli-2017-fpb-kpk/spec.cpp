@@ -23,7 +23,7 @@ protected:
   }
 
   void GradingConfig() {
-    TimeLimit(2);
+    TimeLimit(1);
     MemoryLimit(64);
   }
 
