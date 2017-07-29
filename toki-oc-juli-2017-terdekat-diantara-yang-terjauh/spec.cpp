@@ -35,6 +35,10 @@ protected:
     CONS(isTree(N, U, V));
   }
 
+  void Subtask1(){
+  	Points(100);
+  }
+
 private:
   bool eachElementBetween(const vector<int>&v, int lo, int hi) {
     for (int x : v) {
@@ -72,6 +76,7 @@ private:
 class TestSpec : public BaseTestSpec<ProblemSpec> {
 protected:
   void SampleTestCase1() {
+  	Subtasks({1});
     Input({
       "3 2",
       "1 2 1",
@@ -90,7 +95,8 @@ protected:
     A.clear();
   }
 
-  void TestCases() {
+  void TestGroup1() {
+  	Subtasks({1});
     // manual cases
     CASE(N = 1, K = 1, C = {1}, U = {}, V = {});
     CASE(N = 2, K = 1, C = {1, 1}, U = {1}, V = {2});
