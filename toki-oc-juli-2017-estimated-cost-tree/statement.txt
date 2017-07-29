@@ -1,0 +1,65 @@
+Path Ganjil
+
+[Deskripsi]
+
+Lelah membaca deskripsi soal TOKI Open Contest yang terlalu panjang, Anda memutuskan untuk mencari soal dengan deskripsi pendek. Beruntung Anda menemukan soal ini!
+
+Diberikan sebuah undirected weighted graph. Path didefinisikan sebagai jejak telusur edge dimulai dari suatu vertex dan berakhir pada vertex lain tanpa ada edge yang dilewati lebih dari sekali. Ongkos suatu path didefinisikan sebagai total weight edge yang dilewati pada path tersebut. 
+
+Berapa jumlah ongkos dari seluruh path yang mungkin yang memiliki ongkos bernilai ganjil?
+
+[Format Masukan]
+
+Baris pertama berisi sebuah bilangan bulat N, banyaknya vertex pada tree. N-1 baris berikutnya masing-masing berisi 3 buah bilangan bulat U_i, V_i, C_i, artinya ada undirected edge yang menghubungkan vertex ke U_i dan V_i dengan weight C_i.
+
+
+[Format Keluaran]
+
+Keluarkan sebuah bilangan bulat, jumlah ongkos dari seluruh path yang mungkin yang memiliki ongkos bernilai ganjil.
+
+
+[Contoh Masukan 1]
+
+3
+1 2 2
+2 3 1
+
+
+[Contoh Keluaran 1]
+
+8
+
+
+[Contoh Masukan 2]
+
+4
+1 2 1
+2 3 4
+2 4 9
+
+[Contoh Keluaran 2]
+
+56
+
+
+[Penjelasan]
+
+Pada contoh kasus pertama, ada 9 kemungkinan path:
+1 -> 1, biaya 0
+1 -> 2, biaya 2
+1 -> 2 -> 3, biaya 3
+2 -> 1, biaya 2
+2 -> 2, biaya 0
+2 -> 3, biaya 1
+3 -> 2 -> 1, biaya 3
+3 -> 2, biaya 1
+3 -> 3, biaya 0
+
+Total path dengan ongkos ganjil adalah: 3 + 1 + 3 + 1 = 8
+
+
+[Batasan]
+
+- 1 ≤ N ≤ 10^5
+- 1 ≤ U_i, V_i ≤ N
+- 1 ≤ C_i ≤ 100
