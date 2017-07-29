@@ -36,6 +36,10 @@ protected:
     CONS(Connected(U, V, N));
   }
 
+  void Subtask1(){
+    Points(100);
+  }
+
 private:
   template<class T>
   bool ElementsBetween(vector<T> elements, T lowerBound, T upperBound) {
@@ -97,6 +101,7 @@ private:
 class TestSpec : public BaseTestSpec<ProblemSpec> {
 protected:
   void SampleTestCase1() {
+    Subtasks({1});
     Input({
       "3",
       "1 2 2",
@@ -111,7 +116,8 @@ protected:
     U.clear(); V.clear(); C.clear();
   }
 
-  void TestCases() {
+  void TestGroup1() {
+    Subtasks({1});
     int nLittleCase = 5;
     int nBigCase = 5;
     int nMaxCase = 5;
