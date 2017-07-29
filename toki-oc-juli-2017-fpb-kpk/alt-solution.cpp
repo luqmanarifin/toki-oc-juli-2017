@@ -41,7 +41,7 @@ int main() {
 
       while(x > 1) {
         if (primeDivisor[x] == -1) {
-          kpk[x] = 1;
+          kpk[x] = max(kpk[x], 1);
           x = 1;
         }
         else {
@@ -52,7 +52,7 @@ int main() {
             power++;
           }
 
-          kpk[prime] = power;
+          kpk[prime] = max(kpk[prime], power);
         }
       }
     }
