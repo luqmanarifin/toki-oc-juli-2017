@@ -3,13 +3,9 @@ Tantangan Gebetan Radit
 
 [Deskripsi]
 
-Di suatu sore yang indah di Kota Bandung yang indah dan sejuk, Radit yang bosan dengan kehidupan kuliah yang sangat padat, mengajak gebetannya jalan-jalan. Bandung punya banyak objek wisata alam yang indah, juga pusat hiburan modern yang juga tak kalah megahnya dibanding ibukota Indonesia yang panas itu, sehingga Radit tidak akan pernah kehabisan tujuan.
-
 Radit dan gebetannya sudah saling mengenal begitu lama! Mereka sudah sering bersama: nugas bersama, makan bersama, satu divisi di kepanitiaan yang sama, tempat tinggal mereka pun berdekatan sehingga sering pulang bersama. Tak jarang mereka berbagi pikiran, saling menyemangati ketika salah satu down, berbagi emosi, saling jujur satu sama lain.
 
-Radit tidak mau hanya begini saja dengan gebetannya. Sebagai lelaki normal, ia berpikir untuk melanjutkan hubungan dengan sang gebetan ke jenjang berikutnya (read: berpacaran). Di dalam mobil, dalam perjalanan pulang, karena terjebak macet yang begitu parah (sigh, Bandung memang begitu!), Radit berpikir untuk mengutarakan perasaannya kepada sang gebetan.
-
-Setelah confess, si gebetan yang ternyata mantan team inti ECM-EZPZ kampus tidak langsung berkata 'yes' atau 'no', tetapi malah memberikan sebuah tantangan yang harus diselesaikan untuk membuktikan bahwa Radit memang 'computationally handsome'. Jawaban si gebetan akan bergantung pada jawaban Radit.
+Radit berencana menyatakan perasaan (confess) kepada gebetannya. Tetapi, si gebetan yang ternyata gila Competitive Programming (CP) tidak langsung berkata 'yes' atau 'no', tetapi malah memberikan sebuah tantangan yang harus diselesaikan untuk membuktikan bahwa Radit memang 'computationally handsome'. Jawaban si gebetan akan bergantung pada jawaban Radit.
 
 Ketika memberi tantangan, gebetan Radit menoleh ke seven segment dekat traffic light.
 
