@@ -20,11 +20,20 @@ protected:
     LINE(ans);
   }
 
+  void GradingConfig(){
+    TimeLimit(1);
+    MemoryLimit(64);
+  }
+
   void Constraints() {
     CONS(1 <= N && N <= 1000);
     CONS(1 <= M && M <= 1000);
     CONS(correctBoard());
     CONS(correctSize());
+  }
+
+  void Subtask1(){
+    Points(100);
   }
 
 private:
@@ -63,16 +72,19 @@ class TestSpec : public BaseTestSpec<ProblemSpec> {
 protected:
 
   void SampleTestCase1() {
+    Subtasks({1});
     Input({"3 3", "111", "2?1", "111"});
     Output({"INVALID"});
   }
 
   void SampleTestCase2() {
+    Subtasks({1});
     Input({"3 3", "111", "1?1", "111"});
     Output({"VALID"});
   }
 
-  void TestCases() {
+  void TestGroup1() {
+    Subtasks({1});
     // hand-maded case
 
     // logic-based
