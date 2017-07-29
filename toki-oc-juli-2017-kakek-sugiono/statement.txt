@@ -28,4 +28,4 @@ Sebuah baris berisi banyaknya cara pemilihan permen yang berbeda.
 
 [Batasan]
 
-0 ≤ N ≤ 1.000
+0 ≤ N ≤ 10
