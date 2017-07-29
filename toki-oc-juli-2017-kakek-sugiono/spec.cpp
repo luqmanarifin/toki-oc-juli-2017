@@ -17,7 +17,7 @@ class ProblemSpec : public BaseProblemSpec {
   }
 
   void Constraints() {
-    CONS(0 <= N && N <= 1000);
+    CONS(0 <= N && N <= 10);
   }
 
   void Subtask1(){
@@ -35,23 +35,9 @@ protected:
 
   void TestGroup1() {
     Subtasks({1});
-    int nKasusKecil = 10;
-    int nKasusRandom = 10;
-    int nKasusBesar = 10;
-
-    // Kasus Kecil
-    for(int i = 0; i < nKasusKecil; i++) {
-      CASE(N = i);
-    }
-
-    // Kasus Random
-    for(int i = 0; i < nKasusRandom; i++) {
-      CASE(N = rnd.nextInt(1, 1000));
-    }
-
-    // Kasus Besar
-    for(int i = 0; i < nKasusBesar; i++) {
-      CASE(N = 1000-i);
+    
+    for(int i = 0; i <= 10; i++) {
+      CASE(i);
     }
   }
 };
