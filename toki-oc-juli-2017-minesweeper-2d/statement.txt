@@ -3,7 +3,7 @@ Minesweeper
 
 [Deskripsi]
 
-Suatu hari Pak Ganesh sedang bosan. Kemudian Pak Ganesh memutuskan untuk bermain satu-satunya game yang ada di komputernya yaitu Minesweeper. Minesweeper adalah sebuah game pada sebuah grid berukuran NxM. Pada grid tersebut terdapat beberapa petak yang berisi bom. Pada awalnya semua petak pada grid tertutup dan tujuan dari game ini adalah untuk membuka semua petak yang tidak berisi bom.
+Suatu hari Pak Ganesh sedang bosan. Kemudian Pak Ganesh memutuskan untuk bermain satu-satunya game yang ada di komputernya yaitu Minesweeper. Minesweeper adalah sebuah game pada sebuah grid berukuran N baris dan M kolom. Pada grid tersebut terdapat beberapa petak yang berisi bom. Pada awalnya semua petak pada grid tertutup dan tujuan dari game ini adalah untuk membuka semua petak yang tidak berisi bom.
 
 Jika pemain membuka petak yang berisi bom maka permainan berakhir dan pemain dinyatakan kalah. Namun jika petak yang dibuka tidak berisi bom maka pada petak tersebut akan tertulis angka yang menyatakan petunjuk jumlah bom yang terdapat pada petak-petak tetangganya. Petak pada kolom A dan baris B dinyatakan bertetangga dengan petak pada kolom P dan baris Q jika memenuhi |A-P| <= 1 dan |B-Q| <= 1. Untuk mempermudah permainan, pemain bisa memberikan tanda pada petak yang diyakini berisi bom sehingga pemain tidak perlu menghafal semua petak yang sudah diyakini berisi bom. Jika semua petak yang tidak berisi bom sudah terbuka maka permainan akan berakhir dan pemain dinyatakan menang.
 
@@ -46,6 +46,17 @@ VALID
 [Contoh Keluaran 2]
 
 INVALID
+
+[Contoh Masukan 3]
+
+4 5
+01121
+01*2*
+12232
+1*11*
+
+[Contoh Keluaran 3]
+
 
 
 [Penjelasan]
