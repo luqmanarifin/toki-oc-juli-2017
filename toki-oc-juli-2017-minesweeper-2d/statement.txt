@@ -14,7 +14,7 @@ Pak Ganesh sangat hebat dalam game Minesweeper dan belum pernah terkalahkan kecu
 
 Baris pertama berisi 2 buah bilangan bulat N dan M. N dan M secara berturut-turut menyatakan jumlah baris dan jumlah kolom grid pada game Minesweeper.
 
-Kemudian N baris berikutnya masing-masing berisi M karakter. Karakter-karater tersebut menyatakan keadaan game Minesweeper yang sedang dimainkan Pak Ganesh. Karakter yang muncul hanya berupa karakter '*', karakter '?' atau sebuah digit dari '0' hingga '9'. Karakter '*' menyatakan petak yang sudah ditandai oleh Pak Ganesh sebagai petak yang berisi bom. Karena kehebatannya dalam bermain game Minesweeper, Pak Ganesh tidak pernah salah dalam meletakkan tanda bom ini. Kemudian karakter '?' menyatakan petak yang masih belum terbuka dan digit '0' hingga '9' menyatakan petunjuk yang diberikan game karena sudah membuka petak tersebut.
+Kemudian N baris berikutnya masing-masing berisi M karakter. Karakter-karater tersebut menyatakan keadaan game Minesweeper yang sedang dimainkan Pak Ganesh. Karakter yang muncul hanya berupa karakter '*', karakter '?' atau sebuah digit dari '0' hingga '9'. Karakter '*' menyatakan petak yang sudah ditandai oleh Pak Ganesh sebagai petak yang berisi bom. Karena kehebatannya dalam bermain game Minesweeper, Pak Ganesh tidak pernah salah dalam meletakkan tanda bom ini. Kemudian karakter '?' menyatakan petak yang masih belum terbuka, dan digit '0' hingga '9' menyatakan petunjuk yang diberikan game karena sudah membuka petak tersebut.
 
 
 [Format Keluaran]
@@ -42,10 +42,10 @@ VALID
 *5?
 12*
 
-
 [Contoh Keluaran 2]
 
 INVALID
+
 
 [Contoh Masukan 3]
 
@@ -57,6 +57,7 @@ INVALID
 
 [Contoh Keluaran 3]
 
+VALID
 
 
 [Penjelasan]
@@ -65,9 +66,10 @@ Pada contoh pertama jika petak yang masih tertutup tidak berisi bom maka semua p
 
 Pada contoh kedua jika petak yang tertutup berisi bom maka angka pada petak baris ke-3 kolom ke-2 tidak sesuai. Sedangkan jika petak yang tertutup tidak berisi bom maka angka pada petak baris ke-2 kolom ke-2 tidak sesuai. Sehingga jawabannya INVALID.
 
+Pada contoh ketiga, semua petak yang tidak berisi bom menunjukan petunjuk yang benar.
 
 [Batasan]
 
-- 1 <= N, M <= 1000
+- 1 ≤ N, M ≤ 1000
 - Karakter yang muncul pada grid hanyalah '*', '?', atau sebuah digit dari '0' hingga '9'.
 - Karakter '?' hanya muncul paling banyak 16 kali.
