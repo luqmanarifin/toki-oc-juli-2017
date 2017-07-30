@@ -74,12 +74,17 @@ protected:
   void SampleTestCase1() {
     Subtasks({1});
     Input({"3 3", "111", "2?1", "111"});
-    Output({"INVALID"});
+    Output({"VALID"});
   }
 
   void SampleTestCase2() {
     Subtasks({1});
-    Input({"3 3", "111", "1?1", "111"});
+    Input({"3 3", "2**", "*4?", "12*"});
+    Output({"INVALID"});
+  }
+  void SampleTestCase3() {
+    Subtasks({1});
+    Input({"4 5", "01121", "01*2*", "12232", "1*11*"});
     Output({"VALID"});
   }
 
