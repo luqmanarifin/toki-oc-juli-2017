@@ -112,6 +112,19 @@ protected:
     });
   }
 
+  void SampleTestCase2() {
+    Subtasks({1});
+    Input({
+      "4",
+      "1 2 1",
+      "2 3 4",
+      "2 4 9"
+    });
+    Output({
+      "56"
+    });
+  }
+
   void BeforeTestCase() {
     U.clear(); V.clear(); C.clear();
   }
