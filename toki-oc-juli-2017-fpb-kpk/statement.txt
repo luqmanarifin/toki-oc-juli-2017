@@ -27,38 +27,32 @@ M baris berikutnya berisi dua buah bilangan bulat P_i dan Q_i, menyatakan bilang
 [Contoh Masukan 1]
 
 2
-
 2 2 27
-
 2 4 9
 
 [Contoh Keluaran 1]
 
 2
-
 2 1
-
 3 2
 
 [Contoh Masukan 2]
 
 3
-
 1 4
-
 2 2 5
-
 3 1 3 6
 
 [Contoh Keluaran 2]
 
 1
-
 2 1
 
 
-
 [Penjelasan]
+
+Berikut adalah penjelasan untuk masukan pertama.
+
 Sesi-sesi yang mungkin terjadi yaitu:
 - Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 4, FPB yang dihasilkan 2.
 - Siswa pertama memilih bilangan 2, siswa kedua memilih bilangan 9, FPB yang dihasilkan 1.
@@ -70,11 +64,7 @@ KPK dari setiap FPB yang dihasilkan (2, 1, 1, dan 9) adalah 18. Nilai tersebut d
 [Batasan]
 
 1 ≤ N ≤ 10^5
-
 1 ≤ K_i ≤ 10^5
-
 1 ≤ X_i_j ≤ 10^7
-
 1 ≤ SUM(K_i) ≤ 10^5
-
-Untuk setiap i <= N, a <= K_i, b <= K_i, dan a /= b, X_i_a /= X_i_b
+Untuk setiap i ≤ N, a ≤ K_i, b ≤ K_i, dan a /= b, X_i_a /= X_i_b
